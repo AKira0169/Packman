@@ -53,6 +53,7 @@ app.use(
   }),
 );
 
+// express.static
 // app.set('view engine', 'jade');
 
 app.use(
