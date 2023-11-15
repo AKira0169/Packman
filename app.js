@@ -30,6 +30,8 @@ const mongoSanitize = require('express-mongo-sanitize');
 
 const xss = require('xss-clean');
 
+// Start express app
+
 const app = express();
 
 app.use(cookieParser());
