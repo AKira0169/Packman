@@ -1,0 +1,371 @@
+/*Animation*/
+@keyframes bg {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes movy {
+  0% {
+    transform: translateY(0px);
+  }
+  25% {
+    transform: translateY(100px);
+  }
+  50% {
+    transform: translateY(0px);
+  }
+  75% {
+    transform: translateY(-100px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+/*global*/
+body {
+  background: ##f7f7f7 !important;
+}
+.container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+label {
+  font-size: 30px;
+  font-weight: 600;
+  font-weight: bold;
+}
+
+a {
+  transition: 0.3s !important;
+  text-decoration: none !important;
+  color: black !important;
+  user-select: none !important;
+  cursor: pointer !important;
+}
+a:hover {
+  color: #2d68c0 !important;
+}
+
+#SS {
+  font-size: 20px;
+  font-weight: 500;
+  width: 200px;
+}
+
+/*button in admin page*/
+#S:hover{
+  color: black !important;
+}
+
+/*Log in*/
+.log {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: #95c0ff;
+  border-radius: 6px;
+  outline: none;
+  padding: 30px;
+  width: 500px;
+  height: 400px;
+  animation: movy 0.3s;
+}
+
+.log h1 {
+  font-size: 40px;
+  font-weight: 900;
+  text-align: left;
+  user-select: none;
+}
+.log form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.bi-person-fill,
+.bi-person-fill-lock {
+  width: 30px;
+  height: 30px;
+}
+.log input {
+  border: 0;
+  outline: 0;
+  border-radius: 3px;
+  padding: 5px;
+}
+.log p {
+  text-align: left;
+  font-size: 20px;
+  user-select: none;
+  font-weight: 600;
+  margin-bottom: 0;
+}
+.log select {
+  border: 0;
+  outline: 0;
+  border-radius: 3px;
+  padding: 5px;
+}
+.log button {
+  font-size: 20px;
+  padding: 10px;
+  font-weight: 500;
+}
+
+
+/*signup*/
+.signup {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: #95c0ff;
+  border-radius: 6px;
+  outline: none;
+  padding: 30px;
+  width: 500px;
+  height: 400px;
+  display: none;
+}
+
+.signup h1 {
+  font-size: 40px;
+  font-weight: 900;
+  text-align: left;
+  user-select: none;
+}
+.signup form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.signup input {
+  border: 0;
+  outline: 0;
+  border-radius: 3px;
+  padding: 5px;
+}
+.signup p {
+  text-align: left;
+  font-size: 20px;
+  user-select: none;
+  font-weight: 600;
+  margin-bottom: 0;
+}
+.signup select {
+  border: 0;
+  outline: 0;
+  border-radius: 3px;
+  padding: 5px;
+}
+.signup button {
+  font-size: 20px;
+  padding: 10px;
+  font-weight: 500;
+}
+
+.noactive {
+  display: none;
+  animation: movy 0.5s;
+}
+.active {
+  display: flex;
+  animation: movy 0.5s;
+}
+/*Nave for admin and seller*/
+.admin {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px;
+  background: #777;
+  opacity: 0.9;
+  color: black
+}
+.admin ul {
+  list-style: none;
+  display: flex;
+  gap: 60px;
+  font-size: 20px;
+  font-weight: 600;
+}
+.admin ul a {
+  transition: 0.3s;
+  text-decoration: none;
+  color: black;
+  user-select: none;
+  cursor: pointer;
+}
+.admin ul a:hover {
+  color: #2d68c0;
+}
+
+.admin .user {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.admin .user img {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+}
+.admin .search button {
+  font-size: 20px;
+  font-weight: 500;
+  width: 100px;
+}
+.admin .search input {
+  border: 0;
+  outline: 0;
+  border-radius: 3px;
+  padding: 7px;
+  margin-right: 10px;
+}
+/*class for active page*/
+.activ {
+  color: #2d68c0 !important;
+}
+
+/*Edit Password*/
+.updatedata{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: #95c0ff;
+  border-radius: 6px;
+  outline: none;
+  padding: 30px;
+  width: 500px;
+  height: 400px;
+  animation: movy 0.3s;
+}
+
+.updatedata form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.updatedata input {
+  border: 0;
+  outline: 0;
+  border-radius: 3px;
+  padding: 5px;
+}
+
+.updatedata button {
+  font-size: 20px;
+  padding: 10px;
+  font-weight: 500;
+}
+
+.edit{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: #95c0ff;
+  border-radius: 6px;
+  outline: none;
+  padding: 30px;
+  width: 500px;
+  height: 400px;
+  display: none;
+}
+
+.edit form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.edit input {
+  border: 0;
+  outline: 0;
+  border-radius: 3px;
+  padding: 5px;
+}
+
+.edit button {
+  font-size: 20px;
+  padding: 10px;
+  font-weight: 500;
+}
+
+.noactive {
+  display: none;
+  animation: movy 0.5s;
+}
+.active {
+  display: flex;
+  animation: movy 0.5s;
+}
+
+.text-center.table.mt-5.table-striped.table-bordered.mx-auto {
+  border-color: #b5b5b5;
+}
+
+.login-form {
+  margin: 0 auto;
+  max-width: 55rem;
+  background-color: #fff;
+  -webkit-box-shadow: 0 2.5rem 8rem 2rem rgba(0, 0, 0, 0.06);
+  box-shadow: 0 2.5rem 8rem 2rem rgba(0, 0, 0, 0.06);
+  padding: 5rem 7rem;
+  border-radius: 5px;
+}
+.form__input {
+  display: block;
+  font-family: inherit;
+  font-size: 1.5rem;
+  color: inherit;
+  padding: 1.25rem 1.75rem;
+  border: none;
+  width: 100%;
+  background-color: #fff;
+  background-color: #f2f2f2;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  border-radius: 4px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  /* Pseudo element (a visible thing that isn't really in the DOM).
+      Also needs -ms- */
+}
+.form__input:focus {
+  outline: none;
+  border-bottom: 3px solid #55c57a;
+}
+.form__input:focus:invalid {
+  border-bottom: 3px solid #ff7730;
+}
+.form__input::-webkit-input-placeholder {
+  color: #bbb;
+}
+
+.form__group:not(:last-child) {
+  margin-bottom: 2.5rem;
+}
+
+.form__label {
+  display: block;
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+.ma-bt-md {
+  margin-bottom: 3rem !important;
+}

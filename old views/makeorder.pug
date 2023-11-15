@@ -1,0 +1,36 @@
+extends base
+
+block   content 
+    .admin
+      ul
+        li
+          a(href='/') Home
+        li
+          a(href='/orders') Orders
+        li
+          a(href='/additem') Add Item
+      .user
+        h1 Name
+        img(src='/assets/img/ec0fc0417629ebf71d36bf044fa183ec.jpg' alt='#')
+        .dropdown
+          button#dropdownMenu2.btn.btn.btn-outline-secondary.dropdown-toggle(type='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
+          .dropdown-menu(aria-labelledby='dropdownMenu2')
+            button.dropdown-item(type='button')
+              a(href='/views/settingA.html') Setting
+            button.dropdown-item(type='button')
+              a(href='/logIn.html') Log Out
+    section.w-100
+      div
+        form.p-2(action='/user/additem.htm' method='post')
+          .row.mx-0
+            .mb-3
+              label.form-label(for='inputName') Product
+              input#inputName.form-control(type='name' name='Name')
+            .mb-3
+              label.form-label(for='inputPrice') Price
+              input#inputPrice.form-control(type='number' name='price')
+            .mb-3
+              label.form-label(for='inputNum') Quantity
+              input#inputNum.form-control(type='number' name='number')
+          button#SS.btn.btn-primary(type='submit') Sent
+    

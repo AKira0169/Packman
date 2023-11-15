@@ -1,0 +1,21 @@
+extends base
+block head 
+     link(rel='stylesheet' href='/assets/css/style.css')
+     title Packman | #{title}
+block content 
+    main.main
+        form.form--newOrder
+            h1 New Order
+            .form-group
+                label(for='product-name') Product Name:
+                input#product-name(type='text' name='product-name' value = item.name required , readonly)
+            .form-group
+                label(for='price') Price:
+                input#price.price-order(type='text' name='price' min='0' placeholder =`${item.price}/Each` required, readonly)
+            .form-group
+              label(for='quantity') Quantity:
+              input#order-quantity.priceTotal(type='number' name='quantity' min='1' required)
+            .form-group
+              label(for='quantity') To Whom:
+              input#order-toWhom(type='text' name='towhom' required)
+            button#submit-button.button(type='submit') Submit

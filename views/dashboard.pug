@@ -1,0 +1,20 @@
+extends base
+
+block head
+     meta(charset='UTF-8')
+     meta(name='viewport' content='width=device-width, initial-scale=1.0')
+     link(rel='stylesheet' href='/assets/css/style.css')
+     title Packman | #{title}
+
+block content
+    .dashboard
+        .card.total-products
+            h2 Total Products
+            p#totalProductsCount= Totalproducts.length
+            .card-content 
+        .card.total-orders
+            h2 Total Orders
+            p#totalOrdersCount= Totalorders.length
+        .card.total-sales
+            h2 Total Sales
+            p#totalOrdersCount= `${totalProfit[0].totalProfit} L.E`

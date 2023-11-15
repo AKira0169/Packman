@@ -1,0 +1,43 @@
+extends base
+
+block   content 
+    nav.admin.navbar.navbar-dark
+      .container-fluid
+        button.navbar-toggler(type='button' data-bs-toggle='offcanvas' data-bs-target='#offcanvasDarkNavbar' aria-controls='offcanvasDarkNavbar' aria-label='Toggle navigation')
+          span.navbar-toggler-icon
+        #offcanvasDarkNavbar.offcanvas.offcanvas-end.text-bg-dark(tabindex='-1' aria-labelledby='offcanvasDarkNavbarLabel')
+          .offcanvas-header
+            h5#offcanvasDarkNavbarLabel.offcanvas-title Help
+            button.btn-close.btn-close-white(type='button' data-bs-dismiss='offcanvas' aria-label='Close')
+          .offcanvas-body
+            ul.navbar-nav.justify-content-end.flex-grow-1.pe-3
+              li.nav-item
+                a.nav-link(aria-current='page' href='/views/admin.html') Home
+              li.nav-item
+                a.nav-link(href='/views/request.html') Requests
+              li.nav-item
+                a.nav-link(href='/views/additem.html') Add Item
+              .dropdown
+                button#dropdownMenu2.btn.btn.btn-outline-secondary.dropdown-toggle(type='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
+                .dropdown-menu(aria-labelledby='dropdownMenu2')
+                  button.dropdown-item.activ(type='button') Setting
+                  button.dropdown-item(type='button')
+                    a(href='/logIn.html') Log Out
+    .container
+      #U.updatedata
+        form(action='')
+          label(for='Name') Enter your Name
+          input#Admin(type='text' name='admin')
+          label(for='img') Chosse your image
+          input(type='text' src='img_submit.gif' alt='Submit' width='48' height='48')
+          button.btn.btn-danger(style='margin-top: 10px; border: 0; outline: 0;') Update
+        button.btn.btn-primary(onclick='toggleForm2();' style='margin-top: 40px; border: 0; outline: 0;') Edit Your Password
+      #E.edit
+        form(action='')
+          label(for='Name') Enter your Old Password
+          input#OLdPass(type='text' name='OldP')
+          label(for='Password') Enter your New Password
+          input#PasswordU(type='password' name='passwordU' placeholder='Enter Your Password' minlength='7')
+          label(for='Password') Confirm your New Password
+          input#PasswordUC(type='password' name='passwordU' placeholder='Enter Your Password' minlength='7')
+          button.btn.btn-danger(style='margin-top: 10px; border: 0; outline: 0;') Update

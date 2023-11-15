@@ -1,0 +1,10 @@
+Name : String
+
+email : String
+
+P.Number : Number
+
+role : [admin , Seller]
+
+image : String
+

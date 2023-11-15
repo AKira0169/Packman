@@ -1,0 +1,34 @@
+extends base
+
+
+block head 
+    title Packman | #{title}
+    link(rel='stylesheet', href='/assets/css/profile-management.css')
+
+block content
+    main.main
+      .user-view__content
+        .user-view__form-container
+          h2.heading-secondary.ma-bt-md Your Profile
+          form.changeinfo
+            .form__group
+              label.form__label(for='name') Change Name
+              input#new-name.form__input(type='text', value= user.name, required, name='newName')
+            .form__group
+              label.form__label(for='email') Change Email
+              input#new-email.form__input(type='email', value= user.email, required, name='newEmail')
+            .form__group.right
+              button.btn.btn--small.btn--blue.btn--change-info Save Changes
+
+          form.form.form-user-data.changePassword
+            .form__group
+              label.form__label(for='password-current') Current Password
+              input#password-current.form__input(type='password', placeholder='••••••••', required, minlength='8')
+            .form__group
+              label.form__label(for='password') New Password
+              input#new-password.form__input(type='password', placeholder='••••••••', required, minlength='8')
+            .form__group
+              label.form__label(for='password-confirm') Confirm Password
+              input#password-confirm.form__input(type='password', placeholder='••••••••', required, minlength='8')
+            .form__group.right
+              button.btn.btn--small.btn--blue.btn--change-password Change Password

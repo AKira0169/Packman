@@ -1,0 +1,13 @@
+extends base
+
+block   content 
+    .container
+      #SIG.log
+        h1 Sign Up
+        form(action='post')
+          input#Name(type='text' name='name' placeholder='Enter Your Name')
+          input#userName(type='text' name='name' placeholder='Enter Your Username')
+          input#EmailSIGN(type='email' name='email' placeholder='Enter Your Email')
+          input#PasswordSIGN(type='password' name='password' placeholder='Enter Your Password' minlength='8')
+          input#passwordConfirmation(type='password' name='passwordConfirmation' placeholder='Enter Password Confirmation' minlength='8')
+          button.btn.btn-warning.signUpfunc(type='button') Create Account

@@ -1,0 +1,162 @@
+/* Agent New Code */
+.alert {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  z-index: 9999;
+  color: #fff;
+  font-size: 1.4rem;
+  font-weight: 400;
+  text-align: center;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  padding: 0.9rem 7rem;
+  -webkit-box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.25);
+  box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.25);
+}
+.alert--success {
+  background-color: #3498db;
+}
+.alert--error {
+  background-color: #eb4d4b;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+main.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3rem;
+}
+
+.user-view__content {
+  width: 100%;
+  max-width: 600px;
+}
+
+.user-view__form-container {
+  background: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+
+.heading-secondary {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.form__group {
+  margin-bottom: 15px;
+}
+
+.form__label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form__input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.form__group.right {
+  text-align: right;
+}
+
+.btn {
+  padding: 10px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.btn--blue {
+  background-color: #3498db;
+}
+
+.btn:hover {
+  background-color: #1b77b5;
+}
+
+/* @media screen and (max-width: 600px) {
+  .user-view__form-container {
+    margin: 0 20px;
+  }
+} */
+
+nav {
+  display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100vw;
+    background-color: #3498db;
+    padding: 10px 20px; /* Add padding for better spacing */
+    align-items: center; /* Vertically align content */
+    color: #fff;
+}
+
+ul {
+list-style: none;
+margin: 0;
+padding: 0;
+display: flex;
+}
+
+li {
+margin: 0;
+}
+
+li a {
+display: block;
+color: #fff;
+text-decoration: none;
+padding: 15px 20px;
+transition: background-color 0.3s;
+}
+
+li a:hover {
+background-color: #207ab5;
+}
+
+a{
+  text-decoration: none;
+  color: white;
+  }
+.user-info {
+  display: right;
+  align-items: right;
+  margin-right: 20px;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+}
+
+.user-name {
+  font-weight: bold;
+  margin-left: 1rem;
+}
+.logoutButton {
+  font-size:  16px;
+}

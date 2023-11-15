@@ -1,0 +1,69 @@
+extends base
+
+block head 
+     meta(charset='UTF-8')
+
+     link(rel='stylesheet' href='/assets/css/style.css')
+     title Packman | #{title}
+
+block content
+  table.tablolo
+    thead
+      tr
+        th Num
+        th Product
+        th Quantity
+        th Price
+        th Added at
+        th Avaliable
+        th Actions
+      each product, index in products
+        tbody.keko
+          tr
+            th(scope='row')
+              - const globalIndex = (currentPage - 1) * 10 + index + 1;
+              | #{globalIndex}
+            td= product.name
+            td= product.quantity
+            td= product.price
+            td= product.addedAt.toLocaleString('en-US',{day:'numeric',month:'long',year:'numeric'})
+            td
+              -if (product.status === 'In Stock')
+                .inStock In stock
+              -else if(product.status === 'Out of stock')
+                .outofStock Out of stock
+            td
+              a.button.bttn.button(href=`/make-order/${product.serial}`) ➕
+              -if(user.role==='admin')
+                a.button.bttn.button(href=`/edit-item/${product.serial}`) ✏️
+                button.bttn.button.deleteButton(type='button', data-serial=`${product.serial}`) ❌
+  
+  ul.pagination
+      -const totalPages = Math.ceil(totalProducts.length / 10)
+      -const visiblePages = 5
+      -const startPage = Math.max(1, currentPage - Math.floor(visiblePages / 2));
+      -const endPage = Math.min(totalPages, startPage + visiblePages - 1);
+
+      if (startPage > 1)
+        li
+          a(href=`/products?page=${startPage - 1}`) &lt;
+      each i in Array.from({ length: endPage - startPage + 1 }, (_, index) => startPage + index)
+        li
+          a(href=`/products?page=${i}`, class=currentPage === i ? 'active' : '')= i
+      //- each i in Array.from({ length: totalPages }, (_, index) => index + 1)
+        li
+          a(href=`/products?page=${i}`, class=currentPage === i ? 'active' : '')= i
+      
+      if (endPage < totalPages)
+        li
+          a(href=`/products?page=${endPage + 1}`) &gt;
+
+
+  #confirmationDialog.hidden
+   p Are you sure you want to delete?
+    button.confirmYes.button Yes
+    button.confirmNo.button No
+  
+  
+        // Additional rows can be added here
+        

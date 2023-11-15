@@ -1,0 +1,18 @@
+doctype html
+html(lang="en")
+    head
+        block head
+            meta(charset='UTF-8')
+            meta(name='viewport' content='width=device-width, initial-scale=1.0')
+            link(rel='stylesheet' href='/assets/css/style.css')
+            title Packman | #{title}
+    body 
+        // header
+        //- include _header
+        // CONTENT
+        block content
+            h1 This is a place holder heading
+        // FOOTER
+        //- include _footer
+
+        script(src='/assets/js/bundle.js')

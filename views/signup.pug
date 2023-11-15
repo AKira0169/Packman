@@ -1,0 +1,23 @@
+extends base
+block head 
+     link(rel='stylesheet' href='/assets/css/style.css')
+     title Packman | #{title}
+block content
+    main.main
+        form.form--signup
+            .form-group
+                label(for='name') Name
+                input#name(type='text' name='name' required)
+            .form-group
+                label(for='username') Username
+                input#username(type='text' name='username' required)
+            .form-group
+                label(for='email') Email
+                input#email(type='email' name='email' required)
+            .form-group
+                label(for='password') Password
+                input#password(type='password' name='password' required minlength="8")
+            .form-group
+                label(for='confirmPassword') Confirm Password
+                input#confirmPassword(type='password' name='confirmPassword' required, minlength="8")
+            button.button(type='submit') Sign Up

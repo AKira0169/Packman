@@ -1,0 +1,39 @@
+<style>#search-box {
+  /* Set the width of the search box */
+  width: 300px;
+
+  /* Adjust padding for better visual appearance */
+  padding: 8px;
+
+  /* Add a border to the search box */
+  border: 1px solid #ccc;
+  border-radius: 5px; /* Optional: Add rounded corners */
+
+  /* Add some box shadow for a subtle effect */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+  /* Style the text inside the search box */
+  font-size: 16px;
+
+  /* Set the placeholder text color */
+  color: #999;
+
+  /* Set the background color of the search box */
+  background-color: #f5f5f5;
+
+  /* Adjust margin for spacing */
+  margin-right: 10px;
+}
+
+/* Optional: Style the search icon (assuming it's included in your HTML) */
+#search-box::placeholder {
+  color: #999;
+}
+
+/* Optional: Remove default styling on certain browsers */
+#search-box:focus {
+  outline: none;
+  border-color: #66afe9; /* Optional: Change border color on focus */
+}
+</style>
+<input id="search-box" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">

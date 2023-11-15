@@ -1,0 +1,22 @@
+extends base
+
+block   content 
+    .admin
+      ul
+        li
+          a(href='/views/admin.html') Home
+        li
+          a(href='/views/request.html') Requests
+        li
+          a(href='/views/additem.html') Add Item
+      .user
+        h1 Name
+        img(src='/assets/img/ec0fc0417629ebf71d36bf044fa183ec.jpg' alt='#')
+        .dropdown
+          button#dropdownMenu2.btn.btn.btn-outline-secondary.dropdown-toggle(type='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
+          .dropdown-menu(aria-labelledby='dropdownMenu2')
+            button.dropdown-item(type='button')
+              a(href='/views/settingA.html') Setting
+            button.dropdown-item(type='button')
+              a(href='/logIn.html') Log Out
+    

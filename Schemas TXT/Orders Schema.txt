@@ -1,0 +1,14 @@
+Order Id: object ID
+
+Seller : user name
+
+price : string
+
+Sold To : String
+
+createdAt: Date.now
+
+
+
+
+

@@ -1,0 +1,235 @@
+/* Agent New Code */
+.alert {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  z-index: 9999;
+  color: #fff;
+  font-size: 1.4rem;
+  font-weight: 400;
+  text-align: center;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  padding: 0.9rem 7rem;
+  -webkit-box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.25);
+  box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.25);
+}
+.alert--success {
+  background-color: #3498db;
+}
+.alert--error {
+  background-color: #eb4d4b;
+}
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+li{
+  list-style: none;
+}
+a{
+  text-decoration: none;
+  color: black;
+}
+/*Login Page Style*/
+.body-login{
+  width: 100vw;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+  /* background-image:linear-gradient(#0066FF ,#4FACF7, #001220 ); */
+  background-image: url('../img/background.png');
+  background-repeat:repeat;
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+  height: 100vh;
+  position: relative;
+}
+.container {
+  background: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 500px;
+  height: 500px;
+  text-align: center;
+  margin-top: 13%;
+  border: 1px solid #001220;
+  border-radius: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.container input {
+  width: 400px;
+  height: 75px;
+  padding: 10px;
+  margin: 1rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 2rem;
+  font-size: 1.5rem;
+  text-align: center;
+  border: 1px solid #0f3676;
+}
+.container input:hover{
+  border: 3px solid #5ce1e6;
+  transform: translateY(-0.5rem);
+  box-shadow: 12px 5px 15px -4px rgba(119, 119, 119, 0.8), -12px 5px 15px -4px rgba(119, 119, 119, 0.8);
+  transition: all 0.5s ease;
+}
+.container input:active{
+  border: 3px solid #5ce1e6;
+  transform: translateY(-0.5rem);
+  box-shadow: 12px 5px 15px -4px rgba(119, 119, 119, 0.8), -12px 5px 15px -4px rgba(119, 119, 119, 0.8);
+  transition: all 0.5s ease;
+}
+.login-items{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1rem;
+  filter: blur(0);
+}
+
+.container h1{
+  font-size: 2.5rem;
+}
+
+.btn{
+  margin: 1rem 1rem;
+  width: 400px;
+  padding: 1rem;
+  background: #3498db;
+  border: none;
+  color: #fff;
+  font-size: 1.3rem;
+  border-radius: 2rem;
+  cursor: pointer;
+}
+.btn:hover {
+  background: #1b77b5;
+  transform: translateY(-0.5rem);
+  box-shadow: 12px 5px 15px -4px rgba(119, 119, 119, 0.8), -12px 5px 15px -4px rgba(119, 119, 119, 0.8);
+  transition: all 0.5s ease;
+}
+ @media screen and (max-width: 600px){
+  .container{
+    margin-top: 45%;
+  }
+  .body-login{
+    width: 100vw;
+    background-image: url('../img/mobile-back.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+@media screen and (max-width: 500px){
+  .container{
+    width: 350px;
+    height: 400px;
+    margin-top: 50%;
+  }
+  .body-login{
+    width: 100vw;
+    background-image: url('../img/mobile-back.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .container input {
+    width: 200px;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+}
+@media screen and (max-width: 400px){
+  .container{
+    width: 300px;
+    height: 400px;
+    margin-top: 50%;
+  }
+  .body-login{
+    width: 100vw;
+    background-image: url('../img/mobile-back.png');
+    background-repeat: no-repeat;
+    background-size:cover;
+  }
+
+  .container input {
+    width: 150px;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    
+  }
+}
+@media screen and (max-width: 350px){
+  .container{
+    width: 250px;
+    height: 400px;
+    margin-top: 50%;
+  }
+  .body-login{
+    width: 100vw;
+    background-image: url('../img/mobile-back.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .container input {
+    width: 150px;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+} 
+
+
+.body-container {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+}
+
+#profile-container {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.form-usermagmt {
+  margin-top: 20px;
+}
+
+.labelmagmt {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.inputmagmat {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+}
+
+.buttonmagmat {
+  padding: 10px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.buttonmagmat:hover {
+  background-color: #45a049;
+}

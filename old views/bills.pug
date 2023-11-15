@@ -1,0 +1,65 @@
+extends base
+
+block   content 
+    .admin
+      ul
+        li
+          a(href='/views/seller.html') Home
+        li
+          a.activ(href='/views/bills.html') Bills
+      .user
+        h1 Name
+        img(src='/assets/img/ec0fc0417629ebf71d36bf044fa183ec.jpg' alt='#')
+        .dropdown
+          button#dropdownMenu2.btn.btn.btn-outline-secondary.dropdown-toggle(type='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
+          .dropdown-menu(aria-labelledby='dropdownMenu2')
+            button.dropdown-item(type='button')
+              a(href='/views/settimgS.html') Setting
+            button.dropdown-item(type='button')
+              a(href='/logIn.html') Log Out
+    section
+      table.text-center.table.mt-5.table-striped.table-bordered.mx-auto(style='width: 88%;')
+        thead
+          tr
+            th Name Client 
+            th
+              | Mohamed
+        tbody
+          tr
+            th Products 
+            td
+              | Milk
+        tbody
+          tr
+            th Price
+            td
+              | 13
+        tbody
+          tr
+            th Quantity
+            td
+              form(style='display: inline;' action='' method='post')
+                button.btn.btn-warning.btn-sm(data-bs-toggle='tooltip' data-bs-title='Delet' data-bs-placement='top')
+                  i.fa-solid.fa-plus
+              form(style='display: inline;' action='' method='post')
+                button.btn.btn-danger.btn-sm(data-bs-toggle='tooltip' data-bs-title='Delet' data-bs-placement='top')
+                  i.fa-solid.fa-minus
+              |                         122
+        tbody
+          tr
+            th Total
+            td
+              | 1234$
+        tbody
+          tr
+            th History to Add
+            td
+              | 12/12/2023
+        tbody
+          tr
+            th
+              form(action='' method='post')
+                button.btn.btn-danger(type='submit') Delete
+            td
+              form(action='' method='post')
+                button.btn.btn-warning(type='submit') Total

@@ -1,0 +1,102 @@
+extends base
+
+block   content 
+    nav.admin.navbar.navbar-dark
+      .container-fluid
+        .user
+          h1 Name
+          img(src='/assets/img/ec0fc0417629ebf71d36bf044fa183ec.jpg' alt='#')
+        button.navbar-toggler(type='button' data-bs-toggle='offcanvas' data-bs-target='#offcanvasDarkNavbar' aria-controls='offcanvasDarkNavbar' aria-label='Toggle navigation')
+          span.navbar-toggler-icon
+        #offcanvasDarkNavbar.offcanvas.offcanvas-end.text-bg-dark(tabindex='-1' aria-labelledby='offcanvasDarkNavbarLabel')
+          .offcanvas-header
+            h5#offcanvasDarkNavbarLabel.offcanvas-title Help
+            button.btn-close.btn-close-white(type='button' data-bs-dismiss='offcanvas' aria-label='Close')
+          .offcanvas-body
+            ul.navbar-nav.justify-content-end.flex-grow-1.pe-3
+              li.nav-item
+                a.nav-link.activ(aria-current='page' href='/views/admin.html') Home
+              li.nav-item
+                a.nav-link(href='/views/request.html') Requests
+              li.nav-item
+                a.nav-link(href='/views/additem.html') Add Item
+              form.d-flex.mt-3(role='search')
+                input.form-control.me-2(type='search' placeholder='Search' aria-label='Search')
+                button.btn.btn-primary
+                  a#S(href='/views/search.html') Search
+              .dropdown
+                button#dropdownMenu2.btn.btn.btn-outline-secondary.dropdown-toggle(type='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
+                .dropdown-menu(aria-labelledby='dropdownMenu2')
+                  button.dropdown-item(type='button')
+                    a(href='/views/settingA.html') Setting
+                  button.dropdown-item(type='button')
+                    a(href='/logIn.html') Log Out
+    section
+      .pruducts
+        table.text-center.table.mt-5.table-striped.table-bordered.mx-auto(style='width: 99%;')
+          thead
+            tr
+              th(scope='col') Num
+              th(scope='col') Product
+              th(scope='col') Quantity
+              th(scope='col') Price
+              th(scope='col') Last Update 
+              th(scope='col') Action
+          tbody
+            tr
+              th(scope='row')
+                | 1
+              td
+                | Milk
+              td
+                | 25
+              td
+                | 13
+              td
+                | 12/3/2023
+              td
+                a#S.btn.btn-warning.btn-sm(href='/views/view.html' data-bs-toggle='tooltip' data-bs-title='Deteils' data-bs-placement='top')
+                  i.fa-regular.fa-eye
+                a#S.btn.btn-warning.btn-sm(href='/views/edit.html' data-bs-toggle='tooltip' data-bs-title='Edit' data-bs-placement='top')
+                  i.fa-solid.fa-pen
+                form(style='display: inline;' action='' method='post')
+                  button.btn.btn-danger.btn-sm(data-bs-toggle='tooltip' data-bs-title='Delet' data-bs-placement='top')
+                    i.fa-solid.fa-trash
+            tr
+              th(scope='row')
+                | 2
+              td
+                | Milk
+              td
+                | 25
+              td
+                | 13
+              td
+                | 12/3/2023
+              td
+                a#S.btn.btn-warning.btn-sm(href='/views/view.html' data-bs-toggle='tooltip' data-bs-title='Deteils' data-bs-placement='top')
+                  i.fa-regular.fa-eye
+                a#S.btn.btn-warning.btn-sm(href='/views/edit.html' data-bs-toggle='tooltip' data-bs-title='Edit' data-bs-placement='top')
+                  i.fa-solid.fa-pen
+                form(style='display: inline;' action='' method='post')
+                  button.btn.btn-danger.btn-sm(data-bs-toggle='tooltip' data-bs-title='Delet' data-bs-placement='top')
+                    i.fa-solid.fa-trash
+            tr
+              th(scope='row')
+                | 3
+              td
+                | Milk
+              td
+                | 25
+              td
+                | 13
+              td
+                | 12/3/2023
+              td
+                a#S.btn.btn-warning.btn-sm(href='/views/view.html' data-bs-toggle='tooltip' data-bs-title='Deteils' data-bs-placement='top')
+                  i.fa-regular.fa-eye
+                a#S.btn.btn-warning.btn-sm(href='/views/edit.html' data-bs-toggle='tooltip' data-bs-title='Edit' data-bs-placement='top')
+                  i.fa-solid.fa-pen
+                form(style='display: inline;' action='' method='post')
+                  button.btn.btn-danger.btn-sm(data-bs-toggle='tooltip' data-bs-title='Delet' data-bs-placement='top')
+                    i.fa-solid.fa-trash

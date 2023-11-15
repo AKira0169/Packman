@@ -1,0 +1,53 @@
+extends base
+
+block   content 
+    .admin
+      ul
+        li
+          a(href='/') Home
+        li
+          a(href='orders') Orders
+        li
+          a(href='additem') Add Item
+      .user
+        h1 Name
+        img(src='/assets/img/ec0fc0417629ebf71d36bf044fa183ec.jpg' alt='#')
+        .dropdown
+          button#dropdownMenu2.btn.btn.btn-outline-secondary.dropdown-toggle(type='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
+          .dropdown-menu(aria-labelledby='dropdownMenu2')
+            button.dropdown-item(type='button')
+              a(href='/views/settingA.html') Setting
+            button.dropdown-item(type='button')
+              a(href='/logIn.html') Log Out
+    section.w-100
+        .pruducts
+          //- form#NameClient(action='' method='post' style='position: absolute; top: 80px;left: 40px;')
+          //-   input(type='text' placeholder='Enter Name of Client' name='NameOfClient' style='border: 0; outline: 0;')
+          //-   button.btn.btn-warning.btn-sm(data-bs-placement='top') Sent
+          table.text-center.table.mt-5.table-striped.table-bordered.mx-auto(style='width: 99%;')
+            thead
+              tr
+                th(scope='col') Num
+                th(scope='col') Product
+                th(scope='col') Quantity
+                th(scope='col') Price
+                th(scope='col') Added at
+                th(scope='col') Action
+            each product, index in products
+              tbody
+                tr
+                  th(scope='row')
+                    | #{index+1}
+                  td= product.name
+                  td= product.quantity
+                  td= product.price
+                  td= product.addedAt.toLocaleString('en-US',{day:'numeric',month:'long',year:'numeric'})
+                  td
+                    form(style='display: inline;' action='' method='post')
+                      button.btn.btn-danger.btn-sm(data-bs-toggle='tooltip' data-bs-title='Delet' data-bs-placement='top')
+                        i.fa-solid.fa-plus
+                    a#S.btn.btn-warning.btn-sm(href='/views/edit.html' data-bs-toggle='tooltip' data-bs-title='Edit' data-bs-placement='top')
+                      i.fa-solid.fa-pen
+                    form(style='display: inline;' action='' method='post')
+                      button.btn.btn-danger.btn-sm(data-bs-toggle='tooltip' data-bs-title='Delete' data-bs-placement='top')
+                        i.fa-solid.fa-trash

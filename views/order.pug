@@ -1,0 +1,55 @@
+extends base
+block head 
+     link(rel='stylesheet' href='/assets/css/style.css')
+     title Packman | #{title}
+block  content
+    table.tablolo
+      thead
+        tr
+          th Num
+          th Name of client
+          th Product
+          th Sold By
+          th Quantity
+          th Price
+          th History
+          th Total
+          -if(user.role==='admin')
+            th Actions
+      each order, index in orders
+        tbody
+          tr
+            th(scope='row')
+              - const globalIndex = (currentPage - 1) * 10 + index + 1;
+              | #{globalIndex}
+            td= order.toWhom
+            td= order.name
+            td= order.createdBy
+            td= order.quantity
+            td= order.price
+            td= order.createdAt.toLocaleString('en-US',{day:'numeric',month:'long',year:'numeric'})
+            td= `${order.price * order.quantity} L.E`
+            -if(user.role==='admin')
+              td
+                button.bttn.button.deleteButton(type='button', data-serial=`${order.serial}`) ❌
+    ul.pagination
+      - const totalPages = Math.ceil(totalOrders.length / 10)
+      -const visiblePages = 5
+      -const startPage = Math.max(1, currentPage - Math.floor(visiblePages / 2));
+      -const endPage = Math.min(totalPages, startPage + visiblePages - 1);
+
+      if (startPage > 1)
+        li
+          a(href=`/products?page=${startPage - 1}`) &lt;
+
+      each i in Array.from({ length: endPage - startPage + 1 }, (_, index) => startPage + index)
+        li
+          a(href=`/orders?page=${i}`, class=currentPage === i ? 'active' : '')= i
+          
+      if (endPage < totalPages)
+        li
+          a(href=`/products?page=${endPage + 1}`) &gt;      
+    #confirmationDialog.hidden
+      p Are you sure you want to delete?
+      button.confirmYes.button Yes
+      button.confirmNo.button No

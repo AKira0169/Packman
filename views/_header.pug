@@ -1,0 +1,19 @@
+dev.nav-main
+  if user
+    nav
+      ul
+        li
+          a(href='/') Home
+        li
+          a(href='/products') Products
+        li
+          a(href='/orders') Order history 
+        -if(user.role ==='admin')
+          li
+            a(href='/add-item') Add Product
+      -if (products || orders)
+        input#search-box.form-control.me-2(type='search' placeholder='Search' aria-label='Search')
+      .user-info
+        a.user-name(href='/me', class='anchor-username')
+          span= user.name.split(' ')[0]
+        button.logoutButton.logoutBtn.button.btn Log Out

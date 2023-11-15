@@ -1,0 +1,11 @@
+extends base
+block head 
+     link(rel='stylesheet' href='/assets/css/style.css')
+
+block content 
+  main.main
+    .error
+      .error__title
+        h2.heading-secondary.heading-secondary--error Uh oh! Something went wrong!   
+        h2.error__emoji 😢 🤯
+      .error__msg= msg

@@ -1,0 +1,18 @@
+extends base
+block head 
+     link(rel='stylesheet' href='/assets/css/style.css')
+     title Packman | #{title}
+block content 
+    main.main
+        form.form--newItem
+            h1 New Product
+            .form-group
+                label(for='product-name') Product Name:
+                input#product-name(type='text' name='product-name' required='')
+            .form-group
+                label(for='price') Price:
+                input#price(type='number' name='price' min='0' step='0.01' required='')
+            .form-group
+              label(for='quantity') Quantity:
+              input#quantity(type='number' name='quantity' min='1' required='')
+            button#submit-button.button(type='submit') Submit

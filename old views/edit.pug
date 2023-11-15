@@ -1,0 +1,50 @@
+extends base
+
+block   content 
+    .admin
+      ul
+        li
+          a(href='/views/admin.html') Home
+        li
+          a(href='/views/request.html') Requests
+        li
+          a(href='/views/additem.html') Add Item
+      .user
+        h1 Name
+        img(src='/assets/img/ec0fc0417629ebf71d36bf044fa183ec.jpg' alt='#')
+        .dropdown
+          button#dropdownMenu2.btn.btn.btn-outline-secondary.dropdown-toggle(type='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
+          .dropdown-menu(aria-labelledby='dropdownMenu2')
+            button.dropdown-item(type='button')
+              a(href='/views/settingA.html') Setting
+            button.dropdown-item(type='button')
+              a(href='/logIn.html') Log Out
+    section.w-100
+      div
+        form.p-2(action='' method='post')
+          .row.mx-0
+            .mb-3
+              label.form-label(for='inputName') Product
+              input#inputName.form-control(type='name' name='Name' value='')
+            .mb-3
+              label.form-label(for='inputPrice') Price
+              input#inputPrice.form-control(type='number' name='price' value='')
+            .mb-3
+              label.form-label(for='inputNum') Number
+              input#inputNum.form-control(type='number' name='number' value='')
+          button.btn.btn-primary(type='submit') Update
+          button.btn.btn-danger(type='button' data-bs-toggle='modal' data-bs-target='#exampleModal')
+            | Delet
+    #exampleModal.modal.fade(tabindex='-1' aria-labelledby='exampleModalLabel' aria-hidden='true')
+      .modal-dialog
+        .modal-content
+          .modal-header
+            h1#exampleModalLabel.modal-title.fs-5 Delete
+            button.btn-close(type='button' data-bs-dismiss='modal' aria-label='Close')
+          .modal-body
+            | Are you Sure?
+          .modal-footer
+            button.btn.btn-secondary(type='button' data-bs-dismiss='modal') Close
+            form(action='' method='post')
+              button.btn.btn-danger(type='submit') Delete
+    

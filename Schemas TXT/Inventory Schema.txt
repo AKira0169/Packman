@@ -1,0 +1,9 @@
+Product name: String
+
+Quantity: Number
+
+Price: Number
+
+Status: String 
+
+Date: date

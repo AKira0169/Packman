@@ -1,0 +1,507 @@
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media screen and (max-width: 600px) {
+  .dashboard {
+    display: flex;
+    margin-top: 7rem;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+
+  }
+.card {
+  
+  width: 100%;
+  margin: 2rem;
+}
+ul {
+  display: flex;
+  flex-direction: column;
+}
+
+
+}
+
+.main {
+  width: 600px;
+  background-color: #fff;
+  padding: 8rem 6rem;
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  position: relative;
+  
+}
+
+form {
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 100%;
+}
+
+.form-group {
+  margin-bottom: 25px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  color: #333;
+  font-weight: 600;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+  font-size: 16px;
+  background-color: #f9f9f9;
+}
+
+.button {
+  padding: 11px 15px;
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.button:hover {
+  background-color: #1b77b5;
+}
+
+.bttn {
+  background-color: transparent;
+  margin: 0 0.1rem;
+}
+
+.bttn:hover {
+  background-color: #1b77b5a1;
+}
+
+.tablolo {
+  border-collapse: collapse;
+  width: 80%;
+  margin: 20px auto;
+}
+
+th,
+td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+.ahmedade {
+  color : #000000;
+  background-color: #ddd;
+}
+
+.text-center {
+  font-size: x-large;
+  text-align: center;
+}
+
+thead th {
+  width: 700px;
+  background-color: #3498db;
+  color: #fff;
+}
+
+tbody tr:hover {
+  background-color: #f5f5f5;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #fff;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #f9f9f9;
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100vw;
+  background-color: #3498db;
+  padding: 10px 20px;
+  /* Add padding for better spacing */
+  align-items: center;
+  /* Vertically align content */
+  color: #fff;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+li {
+  margin: 0;
+}
+
+li a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  padding: 15px 20px;
+  transition: background-color 0.3s;
+}
+
+li a:hover {
+  background-color: #207ab5;
+}
+
+.logoutButton {
+  margin: 0;
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  padding: 15px 20px;
+  transition: background-color 0.3s;
+  background-color: #3498db;
+}
+
+.alert {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  z-index: 9999;
+  color: #fff;
+  font-size: 1.4rem;
+  font-weight: 400;
+  text-align: center;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  padding: 0.9rem 7rem;
+  -webkit-box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.25);
+  box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.25);
+}
+
+.alert--success {
+  background-color: #3498db;
+}
+
+.alert--error {
+  background-color: #eb4d4b;
+}
+
+.container {
+  max-width: 600px;
+  height: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+input[type="text"],
+input[type="number"] {
+  width: calc(100% - 12px);
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.container-product {
+  position: absolute;
+  left: 20%;
+}
+
+.user-info {
+  display: right;
+  align-items: right;
+  margin-right: 20px;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+}
+
+.user-name {
+  font-weight: bold;
+  margin-left: 1rem;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+.outofStock {
+  color: red;
+}
+
+.inStock {
+  color: green;
+}
+
+#confirmationDialog {
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  /* Set a high z-index value */
+  background-color: white;
+  padding: 20px;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+#confirmationDialog.hidden {
+  display: none;
+}
+
+ul.pagination {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+ul.pagination li {
+  margin: 0 5px;
+}
+
+ul.pagination a {
+  text-decoration: none;
+  padding: 8px 16px;
+  border: 1px solid #ccc;
+  color: #333;
+  border-radius: 4px;
+}
+
+ul.pagination a:hover {
+  background-color: #ddd;
+}
+
+ul.pagination a.active {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.dashboard {
+  position: absolute;
+  top: 100px;
+  /* Adjust as needed */
+  left: 10px;
+  /* Adjust as needed */
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.card {
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  border-radius: 8px;
+  text-align: center;
+  width: 215px;
+  margin-right: 20px;
+}
+
+.total-products {
+  background-color: #6fa4e3;
+  color: #fff;
+  font-size: 15px;
+}
+
+.total-orders {
+  background-color: #f76262;
+  color: #fff;
+  font-size: 15px;
+}
+
+.total-sales {
+  background-color: #8fd19e;
+  color: #fff;
+  font-size: 15px;
+}
+
+#totalProductsCount {
+  font-size: 25px;
+}
+
+#totalOrdersCount {
+  font-size: 25px;
+}
+
+#totalProductsCount {
+  font-size: 25px;
+}
+
+
+/* main.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+} */
+.user-view__content {
+  height: 100%;
+  width: 100%;
+  max-width: 600px;
+}
+/* @media screen and (max-width: 600px) {
+  .user-view__form-container {
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+
+  
+} */
+
+.user-view__form-container {
+  position: absolute;
+  background: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  width: 100%;
+  max-width: 800px;
+  /* Adjust the max-width as needed for a wider view */
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* Center elements horizontally */
+}
+
+.heading-secondary {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.form__group {
+  width: 100%;
+  /* Full width for form groups */
+}
+
+.form__label {
+  display: block;
+  margin-bottom: 5px;
+  text-align: left;
+  /* Align labels to the left */
+}
+
+.form__input {
+  width: 100%;
+  /* Full width for form inputs */
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.form__group.right {
+  text-align: left;
+  /* Align right-aligned groups to the left */
+}
+
+.btn {
+  width: 100%;
+  /* Full width for the button */
+  padding: 10px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.btn--blue {
+  background-color: #3498db;
+}
+
+.btn:hover {
+  background-color: #1b77b5;
+}
+
+.line {
+  margin: 6rem 0;
+  width: 100%;
+  height: 1px;
+  background-color: #e0e0e0;
+}
+#search-box {
+  /* Set the width of the search box */
+  width: 300px;
+
+  /* Adjust padding for better visual appearance */
+  padding: 8px;
+
+  /* Add a border to the search box */
+  border: 1px solid #ccc;
+  border-radius: 5px; /* Optional: Add rounded corners */
+
+  /* Add some box shadow for a subtle effect */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+  /* Style the text inside the search box */
+  font-size: 16px;
+
+  /* Set the placeholder text color */
+  color: #999;
+
+  /* Set the background color of the search box */
+  background-color: #f5f5f5;
+
+  /* Adjust margin for spacing */
+  margin-right: 170px;
+}
+
+/* Optional: Style the search icon (assuming it's included in your HTML) */
+#search-box::placeholder {
+  color: #999;
+}
+
+/* Optional: Remove default styling on certain browsers */
+#search-box:focus {
+  outline: none;
+  border-color: #66afe9; /* Optional: Change border color on focus */
+}
+

@@ -1,0 +1,64 @@
+extends base
+
+block   content 
+    .admin
+      ul
+        li
+          a(href='/') Home
+        li
+          a.activ(href='/orders') Orders
+        li
+          a(href='/additem') Add Item
+      .user
+        h1 Name
+        img(src='/assets/img/ec0fc0417629ebf71d36bf044fa183ec.jpg' alt='#')
+        .dropdown
+          button#dropdownMenu2.btn.btn.btn-outline-secondary.dropdown-toggle(type='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
+          .dropdown-menu(aria-labelledby='dropdownMenu2')
+            button.dropdown-item(type='button')
+              a(href='/views/settingA.html') Setting
+            button.dropdown-item(type='button')
+              a(href='/logIn.html') Log Out
+    section
+      table.text-center.table.mt-5.table-striped.table-bordered.mx-auto(style='width: 99%;')
+        thead
+          tr
+            th(scope='col') Num
+            th(scope='col') Name of client
+            th(scope='col') Product
+            th(scope='col') Total
+            th(scope='col') History 
+        tbody
+          tr
+            th(scope='row')
+              | 1
+            td
+              | Mohamed
+            td
+              | Milk - Oil
+            td
+              | 25$
+            td
+              | 12/3/2023
+          tr
+            th(scope='row')
+              | 2
+            td
+              | Malek
+            td
+              | Milk -oile
+            td
+              | 25$
+            td
+              | 12/3/2023
+          tr
+            th(scope='row')
+              | 3
+            td
+              | Aymen
+            td
+              | Milk
+            td
+              | 25$
+            td
+              | 12/3/2023

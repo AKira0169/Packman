@@ -1,0 +1,18 @@
+extends base
+
+block head
+ link(rel='stylesheet' href='/assets/css/style-login.css')
+ title Packman | #{title}
+ 
+block content
+  .body-login
+    .container
+      main.main.agent-main
+          h1 Log In
+          form.loginform
+            .login-items
+              input#email(type='text' placeholder='Username/Email' required)
+              input#password(type='password' placeholder='••••••••' required, minlength='8')
+              button.btn(type='submit') Login
+              span Dont Have account? 
+                a.signUp(href='/signup') Signup
