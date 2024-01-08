@@ -14,7 +14,7 @@ export const addNewItem = async (name, price, quantity) => {
     if (res.data.status === 'success') {
       showAlert('success', 'Item created successfully');
       window.setTimeout(() => {
-        location.assign('/');
+        location.assign('/products');
       }, 1500);
     }
   } catch (err) {
@@ -66,7 +66,7 @@ export const deleteProduct = async (serial) => {
     if (res.status === 204) {
       showAlert('success', 'Product Deleted successfully');
       window.setTimeout(() => {
-        location.assign('/products');
+        location.reload(true);
       }, 1500);
     }
   } catch (err) {

@@ -2,6 +2,8 @@
 
 import '@babel/polyfill';
 
+import { showAlert } from './alerts.js';
+
 import { login, signUp, logout } from './login.js';
 
 import { changePassword, updateInfo } from './mangeAcc.js';
@@ -20,6 +22,8 @@ import {
   orderSearchResult,
 } from './search.js';
 
+import { cartPageRend, createOrderCart } from './cart.js';
+
 function isEmail(input) {
   const emailPattern = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
   return emailPattern.test(input);
@@ -33,14 +37,24 @@ const makeNewOrderForm = document.querySelector('.form--newOrder');
 const changePasswordForm = document.querySelector('.changePassword');
 const changeInfoForm = document.querySelector('.changeinfo');
 const editItemForm = document.querySelector('.form--editItem');
-const submitButton = document.getElementById('submit-button');
+const submitButtonNewProduct = document.getElementById(
+  'submit-button-newProduct',
+);
+const submitButtonMakeOrder = document.getElementById(
+  'submit-button-makeOrder',
+);
+const submitButtonCart = document.getElementById('submit-button-cart');
+const cartForm = document.querySelector('.form-cart');
 const deleteButton = document.getElementsByClassName('deleteButton');
 const confirmationDialog = document.getElementById('confirmationDialog');
 const confirmYes = document.querySelector('.confirmYes');
 const confirmNo = document.querySelector('.confirmNo');
 const searchInput = document.getElementById('search-box');
 const priceTotal = document.querySelector('.priceTotal');
+const cartBttn = document.getElementsByClassName('cartBttn');
+const cartPage = document.getElementById('cartPage');
 let serial;
+let cart = [];
 
 if (priceTotal) {
   priceTotal.addEventListener('keyup', (e) => {
@@ -48,6 +62,24 @@ if (priceTotal) {
     const pricee = document.querySelector('.price-order').placeholder;
     document.querySelector('.price-order').value =
       pricee.split('/')[0] * e.target.value + '/L.E';
+  });
+}
+
+if (cartBttn) {
+  Array.from(cartBttn).forEach((cartButton) => {
+    cartButton.addEventListener('click', async (e) => {
+      e.preventDefault();
+      const productSerial = cartButton.getAttribute('data-serial');
+      showAlert('success', 'Product added to cart successfully');
+      cart.push(productSerial);
+    });
+  });
+}
+
+if (cartPage) {
+  cartPage.addEventListener('click', (e) => {
+    e.preventDefault();
+    cartPageRend(cart);
   });
 }
 
@@ -118,12 +150,12 @@ if (addNewItemForm) {
     const name = document.getElementById('product-name').value;
     const price = document.getElementById('price').value;
     const quantity = document.getElementById('quantity').value;
-    submitButton.disabled = true;
+    submitButtonNewProduct.disabled = true;
     try {
       await addNewItem(name, price, quantity);
     } catch (err) {
     } finally {
-      submitButton.disabled = false;
+      submitButtonNewProduct.disabled = false;
     }
     // addNewItem(name, price, quantity);
   });
@@ -135,14 +167,61 @@ if (makeNewOrderForm) {
     const OrderSerial = url.substring(url.lastIndexOf('/') + 1);
     const orderQuantity = document.getElementById('order-quantity').value;
     const toWhom = document.getElementById('order-toWhom').value;
-    submitButton.disabled = true;
+    submitButtonMakeOrder.disabled = true;
     try {
       await makeNewOrder(orderQuantity, toWhom, OrderSerial);
     } catch (err) {
     } finally {
-      submitButton.disabled = false;
+      submitButtonMakeOrder.disabled = false;
     }
     // makeNewOrder(orderQuantity, toWhom, serial);
+  });
+}
+if (cartForm) {
+  const productsName = document.querySelectorAll('#cart-product-name');
+  const productsQuantitie = document.querySelectorAll('#cart-product-quantity');
+  const productsPrice = document.querySelectorAll('#cart-product-price');
+  const productsTotal = document.querySelectorAll('.product-total');
+  const itemsSerial = document.querySelectorAll('.deleteButton');
+  const products = [];
+
+  const updateTotal = () => {
+    let overallTotal = 0;
+    for (let i = 0; i < productsName.length; i++) {
+      let quantity = parseInt(productsQuantitie[i].value, 10);
+      if (isNaN(quantity) || quantity < 0) {
+        quantity = 0;
+      }
+      const price = parseFloat(productsPrice[i].value);
+      const total = quantity * price;
+      overallTotal += total;
+      productsTotal[i].textContent = total.toFixed(2);
+    }
+    const totalElement = document.querySelector('.total');
+    if (totalElement) {
+      totalElement.textContent = `Total: ${overallTotal.toFixed(2)} L.E `;
+    }
+  };
+  updateTotal();
+  Array.from(productsQuantitie).forEach((element) => {
+    element.addEventListener('keyup', updateTotal);
+  });
+  cartForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    for (let i = 0; i < productsName.length; i++) {
+      const serial = itemsSerial[i].getAttribute('data-serial');
+      const quantity = parseInt(productsQuantitie[i].value, 10);
+      const toWhom = document.getElementById('order-toWhom').value;
+      const product = { quantity, serial, toWhom };
+      products.push(product);
+      submitButtonCart.disabled = true;
+    }
+    try {
+      await createOrderCart(products);
+    } catch (err) {
+    } finally {
+      submitButtonCart.disabled = false;
+    }
   });
 }
 

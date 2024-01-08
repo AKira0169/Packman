@@ -1,0 +1,49 @@
+extends base
+
+block head 
+     meta(charset='UTF-8')
+     link(rel='stylesheet' href='/assets/css/style.css')
+     title Packman | #{title}
+
+block content
+  -if(products.length > 0)
+    h1 Your Shopping Cart
+    form.form-cart
+      table.table
+        thead
+          tr
+            th Num
+            th Product
+            th Quantity
+            th Price
+            th Total
+            th Avaliable
+            th Actions
+        each product, index in products
+          tbody.tableBody
+              tr
+                th(scope='row')= index+1
+                td= product.name
+                  input#cart-product-name(type='hidden', name='cart-product-name' ,value=product.name)
+                td
+                  input#cart-product-quantity(type='number', min='1', placeholder=1 ,value=1)
+                td= product.price
+                  input#cart-product-price(type='hidden', name='cart-product-price' placeholder=product.price ,value= product.price)
+                td.product-total= product.price * 1
+                td= product.quantity
+                td
+                  button.bttn.button.actions.deleteButton(type='button', data-serial=`${product.serial}`) ❌
+      div.cartdiv
+          label(for='quantity') To Whom:
+          input#order-toWhom(type='text' name='towhom' required)
+          p.total Total: L.E
+          button#submit-button-cart.button(href='/checkout') Checkout
+    #confirmationDialog.hidden
+      p Are you sure you want to delete?
+        button.confirmYes.button Yes
+        button.confirmNo.button No
+  -if(products.length === 0)
+    main.main
+      .error
+        .error__title
+          h2.heading-secondary.heading-secondary--error There is no items in cart

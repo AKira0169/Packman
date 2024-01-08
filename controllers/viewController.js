@@ -135,7 +135,7 @@ exports.editItemView = catchAsync(async (req, res, next) => {
 });
 
 exports.dashboardView = catchAsync(async (req, res, next) => {
-  const Totalproducts = await Products.find();
+  const Totalproducts = await Products.find({ status: 'In Stock' });
   const Totalorders = await Orders.find();
   const totalProfit = await Orders.aggregate([
     {
@@ -163,4 +163,10 @@ exports.dashboardView = catchAsync(async (req, res, next) => {
     Totalorders,
     totalProfit,
   });
+});
+exports.cartView = catchAsync(async (req, res, next) => {
+  const { cart } = req.query;
+  const cartArray = JSON.parse(cart);
+  const products = await Products.find({ serial: { $in: cartArray } });
+  res.status(200).render('cart', { title: 'Cart', products });
 });

@@ -102,7 +102,7 @@ input[type="password"] {
   background-color: #1b77b5a1;
 }
 
-.tablolo {
+.table {
   border-collapse: collapse;
   width: 80%;
   margin: 20px auto;
@@ -110,8 +110,8 @@ input[type="password"] {
 
 th,
 td {
-  padding: 12px;
-  text-align: left;
+  padding: 12px 0;
+  text-align: center;
   border-bottom: 1px solid #ddd;
 }
 .ahmedade {
@@ -128,6 +128,7 @@ thead th {
   width: 700px;
   background-color: #3498db;
   color: #fff;
+  text-align: center;
 }
 
 tbody tr:hover {
@@ -504,4 +505,34 @@ ul.pagination a.active {
   outline: none;
   border-color: #66afe9; /* Optional: Change border color on focus */
 }
+.table thead tr {
+  text-align: center;
+}
+.actions {
+  padding: 8px
+}
+.form-cart {
+  background-color: transparent !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: 0 0 0 transparent !important;
+  max-width: 100vw !important;
+  width: 100vw !important;
+}
 
+.cartdiv {
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 100%;
+  margin-left: 40%;
+}
+.total {
+  text-align: center;
+  padding: 10px
+}
+.cartdiv button {
+  margin-left: 35%;
+}

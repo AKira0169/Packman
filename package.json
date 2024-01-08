@@ -4,7 +4,7 @@
   "description": "Web Application to manage inventory and stock",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon server.js",
+    "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start:prod": "NODE_ENV=production nodemon server.js",
     "watch:js": "parcel watch ./public/assets/js/index.js --out-dir ./public/assets/js --out-file bundle.js",

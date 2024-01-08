@@ -7,7 +7,7 @@ block head
      title Packman | #{title}
 
 block content
-  table.tablolo
+  table.table
     thead
       tr
         th Num
@@ -18,7 +18,7 @@ block content
         th Avaliable
         th Actions
       each product, index in products
-        tbody.keko
+        tbody.tableBody
           tr
             th(scope='row')
               - const globalIndex = (currentPage - 1) * 10 + index + 1;
@@ -33,10 +33,11 @@ block content
               -else if(product.status === 'Out of stock')
                 .outofStock Out of stock
             td
-              a.button.bttn.button(href=`/make-order/${product.serial}`) ➕
+              a.button.bttn.actions.button(href=`/make-order/${product.serial}`) ➕
+              a.button.bttn.actions.button.cartBttn(data-serial=`${product.serial}`) 🛒
               -if(user.role==='admin')
-                a.button.bttn.button(href=`/edit-item/${product.serial}`) ✏️
-                button.bttn.button.deleteButton(type='button', data-serial=`${product.serial}`) ❌
+                a.button.bttn.actions.button(href=`/edit-item/${product.serial}`) ✏️
+                button.bttn.button.actions.deleteButton(type='button', data-serial=`${product.serial}`) ❌
   
   ul.pagination
       -const totalPages = Math.ceil(totalProducts.length / 10)

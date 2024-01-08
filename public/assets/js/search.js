@@ -21,14 +21,14 @@ export const orderSearchResult = async (input) => {
       data: { input },
     });
     if (res.data.orders.length < 1) {
-      const tableBody = document.querySelector('.tablolo');
+      const tableBody = document.querySelector('.table');
       tableBody.innerHTML = '<p class="text-center">Sorry no results</p>';
       return;
     }
     const deleteButton = document.getElementsByClassName('deleteButton');
     const confirmYes = document.querySelector('.confirmYes');
     const confirmNo = document.querySelector('.confirmNo');
-    const tableBody = document.querySelector('.tablolo');
+    const tableBody = document.querySelector('.table');
     let serial;
     tableBody.innerHTML = '';
     const user = res.data.user;
@@ -96,14 +96,14 @@ export const productSearchResult = async (input) => {
       data: { input },
     });
     if (res.data.products.length < 1) {
-      const tableBody = document.querySelector('.tablolo');
+      const tableBody = document.querySelector('.table');
       tableBody.innerHTML = '<p class="text-center">Sorry no results</p>';
       return;
     }
     const deleteButton = document.getElementsByClassName('deleteButton');
     const confirmYes = document.querySelector('.confirmYes');
     const confirmNo = document.querySelector('.confirmNo');
-    const tableBody = document.querySelector('.tablolo');
+    const tableBody = document.querySelector('.table');
     let serial;
     tableBody.innerHTML = '';
     const user = res.data.user;
@@ -133,17 +133,18 @@ export const productSearchResult = async (input) => {
               : '<div class="outofStock">Out of stock</div>'
           }</td>
           <td>
-            <a class='button bttn button' href='/make-order/${
+            <a class='button bttn actions button' href='/make-order/${
               product.serial
             }'>➕</a>
+            <a class='button bttn actions button' href='#'>🛒</a>
             ${
               user.role === 'admin'
-                ? `<a class='button bttn button' href='/edit-item/${product.serial}'>✏️</a>`
+                ? `<a class='button bttn actions button' href='/edit-item/${product.serial}'>✏️</a>`
                 : ''
             }
             ${
               user.role === 'admin'
-                ? `<button class='bttn button deleteButton deleteButton' type='button' data-serial='${product.serial}'>❌</button>`
+                ? `<button class='bttn actions button deleteButton deleteButton' type='button' data-serial='${product.serial}'>❌</button>`
                 : ''
             }
           </td>

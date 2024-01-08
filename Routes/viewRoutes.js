@@ -46,4 +46,6 @@ router.get(
   authenController.restrictTo('admin'),
   viewController.editItemView,
 );
+router.get('/cart', viewController.cartView);
+
 module.exports = router;

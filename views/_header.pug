@@ -8,6 +8,8 @@ dev.nav-main
           a(href='/products') Products
         li
           a(href='/orders') Order history 
+        li
+          a#cartPage(href='/cart') Cart 
         -if(user.role ==='admin')
           li
             a(href='/add-item') Add Product

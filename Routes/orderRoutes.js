@@ -17,6 +17,13 @@ router.post(
   orderController.createOrder,
 );
 
+router.post(
+  '/create-new-order-cart',
+  inventoryController.creatingItemAttempts,
+  orderController.setProduct,
+  orderController.cart,
+);
+
 router.get('/', orderController.getAllOrders);
 router.delete('/delete-order/:serial', orderController.deleteOrder);
 
